@@ -1,0 +1,32 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import EmployeePage from './pages/EmployeePage';
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        {/* Dynamic Route for manual pages */}
+        {/* URL will be like http://localhost:5173/fama-diaw */}
+        <Route path="/:slug" element={<EmployeePage />} />
+
+        {/* Default / Home */}
+        <Route path="/" element={
+          <div className="h-screen flex items-center justify-center bg-gray-50 flex-col gap-4">
+            <h1 className="text-3xl font-bold text-gray-800">PowerTech Digital Cards</h1>
+            <p className="text-gray-500">Scan an employee QR code to view their profile.</p>
+            <div className="mt-4 p-4 bg-white shadow rounded-lg">
+              <p className="text-sm font-semibold mb-2">Example Pages:</p>
+              <ul className="list-disc pl-5 text-blue-600">
+                <li><a href="/fama-diaw">/fama-diaw</a></li>
+                <li><a href="/souleymane-sall">/souleymane-sall</a></li>
+              </ul>
+            </div>
+          </div>
+        } />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
