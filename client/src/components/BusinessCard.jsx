@@ -127,21 +127,118 @@ END:VCARD`;
                     </div>
 
 
-                    {/* Address Card */}
-                    <div className="animate-slide-up" style={{ animationDelay: '300ms' }}>
-                        <div className="group flex items-start p-4 bg-[#0f172a] rounded-2xl hover:bg-gray-800 shadow-xl transition-all border border-gray-700/50 hover:border-orange-500/30 text-left">
-                            <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-orange-500 shadow-inner mr-4 shrink-0 group-hover:scale-110 transition-transform duration-300">
-                                <MapPin size={18} />
+                    {/* --- NEW DARK CONTACTS CARD (Matches Photo) --- */}
+                    <div className="bg-[#1c1c1c] rounded-3xl p-6 text-left mx-2 shadow-2xl animate-slide-up" style={{ animationDelay: '300ms' }}>
+                        {/* ... (existing contact content) ... */}
+                        {/* Header */}
+                        <div className="flex items-center gap-3 mb-6 relative">
+                            <div className="w-10 h-10 bg-[#ea580c] rounded-lg flex items-center justify-center shrink-0">
+                                <img src="/images/logo.png" alt="Logo" className="w-6 h-6 object-contain brightness-0 invert" />
                             </div>
-                            <div className="flex-1 min-w-0">
-                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Adresse</p>
-                                <p className="text-sm font-semibold text-white leading-snug group-hover:text-orange-400 transition-colors">
-                                    {company.formatted_address?.line1}, {company.formatted_address?.line2}
-                                </p>
-                                <a href={company.maps_link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-[11px] font-bold text-orange-500 mt-2 hover:underline hover:text-orange-400">
-                                    Voir sur la carte <ChevronRight size={12} />
+                            <h2 className="text-[#ea580c] text-xl font-medium tracking-wide">Contacts</h2>
+                            {/* Dashed Line */}
+                            <div className="absolute -bottom-3 left-0 right-0 border-b border-dashed border-gray-600"></div>
+                        </div>
+
+                        <div className="space-y-6 mt-8">
+                            {/* Mobile SN */}
+                            <div>
+                                <p className="text-[#ea580c] text-lg font-serif">Mobile SN</p>
+                                <a href={`tel:${employee.phone}`} className="text-gray-200 text-sm font-light mt-1 block hover:text-white transition-colors">
+                                    {employee.phone}
                                 </a>
                             </div>
+
+                            {/* Email */}
+                            <div>
+                                <p className="text-[#ea580c] text-lg font-serif">Email</p>
+                                <a href={`mailto:${employee.email}`} className="text-gray-200 text-sm font-light mt-1 block break-all hover:text-white transition-colors">
+                                    {employee.email}
+                                </a>
+                            </div>
+
+                            {/* Adresse */}
+                            <div>
+                                <p className="text-[#ea580c] text-lg font-serif">Adresse</p>
+                                <p className="text-gray-200 text-sm font-light mt-1 leading-relaxed">
+                                    {company.formatted_address?.line1}, {company.formatted_address?.line2}<br />
+                                    {company.formatted_address?.line3}
+                                </p>
+                            </div>
+
+                            {/* Map Button */}
+                            <a
+                                href={company.maps_link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="block w-full bg-[#ea580c] text-white py-3 rounded-full text-center text-sm font-medium hover:bg-orange-600 transition-colors flex items-center justify-center gap-2 mt-4"
+                            >
+                                <MapPin size={16} fill="currentColor" strokeWidth={0} />
+                                <span>Cliquer pour suivre le maps</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    {/* --- NEW WHITE CARD (Logo + Photo) --- */}
+                    <div className="bg-white rounded-3xl overflow-hidden shadow-2xl mx-2 mt-8 animate-slide-up" style={{ animationDelay: '400ms' }}>
+                        {/* White Header with Logo */}
+                        <div className="bg-white p-6 flex justify-center border-b border-gray-100">
+                            <img src="/images/logo_powertech.png" alt="PowerTech Logo" className="h-12 object-contain" />
+                        </div>
+
+                        {/* Large Portrait Photo */}
+                        <div className="bg-gray-50 flex justify-center pt-8 pb-0 overflow-hidden">
+                            <img
+                                src={employee.photo_url}
+                                alt={employee.full_name}
+                                className="w-[60%] h-auto object-cover object-top mask-image-gradient-b drop-shadow-xl transform translate-y-2"
+                            />
+                        </div>
+                    </div>
+
+                    {/* --- NEW SCHEDULE MEETING CARD --- */}
+                    <div className="bg-[#1c1c1c] rounded-3xl p-6 text-center mx-2 mt-8 shadow-2xl animate-slide-up" style={{ animationDelay: '500ms' }}>
+                        <h2 className="text-[#ea580c] text-2xl font-serif tracking-wide mb-2">Schedule Meeting</h2>
+                        <p className="text-white text-sm font-light leading-relaxed mb-6 px-4">
+                            Schedule a meeting to discuss potential opportunities for collaboration
+                        </p>
+
+                        {/* Dashed Line */}
+                        <div className="border-b border-dashed border-gray-600 mb-6"></div>
+
+                        <div className="space-y-4">
+                            <a
+                                href={company.calendly}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="block w-full bg-[#ea580c] text-white py-3 rounded-full text-base font-medium hover:bg-orange-600 transition-colors shadow-lg"
+                            >
+                                Book on Calendly
+                            </a>
+                            <button
+                                onClick={handleSaveContact}
+                                className="block w-full bg-[#ea580c] text-white py-3 rounded-full text-base font-medium hover:bg-orange-600 transition-colors shadow-lg"
+                            >
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* --- NEW TEAM CARD (Logo + Generated Image) --- */}
+                    <div className="bg-white rounded-3xl overflow-hidden shadow-2xl mx-2 mt-8 animate-slide-up" style={{ animationDelay: '600ms' }}>
+                        {/* White Header with Logo */}
+                        <div className="bg-white p-6 flex justify-center border-b border-gray-100">
+                            <img src="/images/logo_powertech.png" alt="PowerTech Logo" className="h-12 object-contain" />
+                        </div>
+
+                        {/* Team Image */}
+                        <div className="bg-gray-50 flex justify-center pt-0 overflow-hidden">
+                            <img
+                                src="/images/teams_working.png"
+                                alt="PowerTech Team"
+                                className="w-full h-auto object-cover"
+                            />
                         </div>
                     </div>
                 </div>
@@ -155,6 +252,20 @@ END:VCARD`;
                         <ActionCard icon={<Calendar size={18} />} title="Rendez-vous" subtitle="Réserver un créneau" href={company.calendly} color="text-teal-600" bg="bg-teal-50" delay="400ms" />
                         <ActionCard icon={<Globe size={18} />} title="Site Internet" subtitle="Visiter powertech.com" href={company.website} color="text-indigo-600" bg="bg-indigo-50" delay="500ms" />
                         <ActionCard icon={<Linkedin size={18} />} title="LinkedIn" subtitle="Voir le profil complet" href={employee.linkedin_personal} color="text-blue-600" bg="bg-blue-50" delay="600ms" />
+                        <ActionCard icon={<LayoutGrid size={18} />} title="Intranet" subtitle="Accès sécurisé" href="https://intranet-powertech-2tqd.vercel.app/" color="text-orange-600" bg="bg-orange-50" delay="700ms" />
+                    </div>
+
+                    {/* --- QUI SOMMES-NOUS --- */}
+                    <div className="bg-[#1c1c1c] rounded-3xl p-6 text-center mb-8 shadow-2xl animate-slide-up" style={{ animationDelay: '450ms' }}>
+                        <h2 className="text-[#ea580c] text-xl font-serif tracking-widest uppercase mb-4">QUI SOMMES-NOUS ?</h2>
+                        <div className="space-y-4">
+                            <p className="text-gray-300 text-sm font-light leading-relaxed">
+                                Cree en 2024 <span className="text-white font-medium">POWERTECH ENGINEERING SERVICES</span> est une entreprise qui mène ses activités dans le domaine de l’exploitation et de la maintenance des centrales électriques (thermique et renouvelable), des tests, inspections et contrôle technique des équipements industriels, de la fournitures des équipements industriels et des pièces de rechange, de la maintenance des équipements maritimes, de la gestion des projets d’énergie et construction (EPC), de la consultance et de la formation pratique.
+                            </p>
+                            <p className="text-gray-300 text-sm font-light leading-relaxed border-t border-gray-700/50 pt-4">
+                                Elle intervient dans les secteurs de l’énergie, de la mine, de l’industrie de la marine et du pétrole et gaz.
+                            </p>
+                        </div>
                     </div>
 
                     {/* Services Image */}
@@ -164,6 +275,20 @@ END:VCARD`;
                         </div>
                         <div className="rounded-2xl overflow-hidden shadow-xl shadow-gray-200 border border-gray-100 group">
                             <img src="/images/services.png" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Nos Services" />
+                        </div>
+                    </div>
+
+                    {/* YouTube Video Section */}
+                    <div className="mb-8 animate-slide-up" style={{ animationDelay: '750ms' }}>
+                        <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-black aspect-video relative">
+                            <iframe
+                                className="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/OWaoiMRYmc0"
+                                title="Powertech Services"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                            ></iframe>
                         </div>
                     </div>
 
@@ -186,7 +311,28 @@ END:VCARD`;
                     </div>
 
                     {/* Footer Socials */}
-                    <div className="flex justify-center gap-4 pt-4 border-t border-gray-100 animate-slide-up" style={{ animationDelay: '1400ms' }}>
+                    {/* --- NEW FOOTER CARDS --- */}
+                    <div className="mt-12 space-y-4 pb-12 animate-slide-up" style={{ animationDelay: '1500ms' }}>
+                        {/* Copyright Orange Card */}
+                        <div className="bg-[#ea580c] rounded-[2.5rem] p-6 text-center shadow-xl">
+                            <p className="text-white text-sm font-serif leading-tight tracking-wide">
+                                © 2025 POWERTECH ENGINEERING SERVICES All Rights Reserved powered by powertech
+                            </p>
+                        </div>
+
+                        {/* SDG & Partner Logo Black Card */}
+                        <div className="bg-[#1c1c1c] rounded-[2.5rem] p-4 flex items-center justify-between shadow-xl">
+                            <div className="w-20 h-20 shrink-0">
+                                <img src="/images/sdg_wheel.png" alt="SDGs" className="w-full h-full object-contain" />
+                            </div>
+                            <div className="bg-white p-3 rounded-2xl ml-4 flex-1 flex justify-center items-center h-16">
+                                <img src="/images/logo_powertech.png" alt="Powertech Logo" className="h-full object-contain" />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Footer Socials (Moved) */}
+                    <div className="flex justify-center gap-4 pt-4 border-t border-gray-100 animate-slide-up" style={{ animationDelay: '1600ms' }}>
                         {[
                             { icon: <Instagram size={18} />, href: company.socials.instagram },
                             { icon: <Linkedin size={18} />, href: company.socials.linkedin },
@@ -201,7 +347,7 @@ END:VCARD`;
                     </div>
 
                     <div className="text-center mt-6">
-                        <p className="text-[10px] font-semibold text-gray-300">POWERED BY SAM CORPORATE</p>
+                        <p className="text-[8px] font-black text-gray-200 uppercase tracking-widest">Innovation • Excellence • Integrity</p>
                     </div>
 
                 </div>
@@ -222,7 +368,7 @@ END:VCARD`;
                     </div>
 
                     {/* Right: Add Contact (Large Pill) */}
-                    <button onClick={handleSaveContact} className="flex-1 bg-[#ea580c] h-11 rounded-[2rem] pl-5 pr-1.5 shadow-xl shadow-orange-900/20 flex items-center justify-between text-white hover:bg-orange-600 active:scale-95 transition-all">
+                    <button onClick={handleSaveContact} className="bg-[#ea580c] h-11 rounded-[2rem] pl-5 pr-1.5 shadow-xl shadow-orange-900/20 flex items-center gap-3 text-white hover:bg-orange-600 active:scale-95 transition-all">
                         <span className="font-bold text-[10px] uppercase tracking-wider">Ajouter Contact</span>
                         <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#ea580c]">
                             <Plus size={18} strokeWidth={3} />
