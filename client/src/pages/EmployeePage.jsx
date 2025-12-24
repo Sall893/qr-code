@@ -66,7 +66,7 @@ const EmployeePage = () => {
                 let empData;
                 try {
                     // Backend fetch
-                    const response = await axios.get(`http://localhost:5000/api/employees/${slug}`);
+                    const response = await axios.get(`https://qr-code-a0un.onrender.com/api/employees/${slug}`);
                     empData = response.data;
                 } catch (e) {
                     console.warn("Backend fetch failed, using fallback");

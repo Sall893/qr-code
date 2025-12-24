@@ -14,8 +14,8 @@ const employees = [
 ];
 
 // CHANGE THIS TO YOUR PRODUCTION DOMAIN WHEN DEPLOYING
-// const baseUrl = 'https://vcard.power-techservices.com';
-const baseUrl = 'http://192.168.1.21:5173';
+const baseUrl = 'https://qr-code-eight-inky.vercel.app';
+// const baseUrl = 'http://192.168.1.21:5173';
 
 async function generate() {
     console.log('Generating QR Codes...');
