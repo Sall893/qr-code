@@ -118,6 +118,15 @@ const EmployeePage = () => {
                     photo_url: '/images/gorgui.jpeg',
                     linkedin_personal: 'https://linkedin.com/'
                 };
+            } else if (slug === 'rabyatou-diallo') {
+                localData = {
+                    full_name: 'RABYATOU DIALLO',
+                    position: 'Responsable Ressources Humaines',
+                    phone: '+221 76 622 35 09',
+                    email: 'rabyatou.diallo@power-techservices.com',
+                    photo_url: '/images/rabyatou.jpg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
             }
 
             if (localData) {
@@ -137,6 +146,7 @@ const EmployeePage = () => {
                     if (slug === 'mame-ngone-sy') empData.photo_url = '/images/Ngoné.jpeg';
                     if (slug === 'oulimata-cissokho') empData.photo_url = '/images/oulimata.jpeg';
                     if (slug === 'yara-coulibaly') empData.photo_url = '/images/gorgui.jpeg';
+                    if (slug === 'rabyatou-diallo') empData.photo_url = '/images/rabyatou.jpg';
 
                     setEmployee(empData);
                 }

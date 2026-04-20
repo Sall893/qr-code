@@ -23,6 +23,7 @@ function App() {
                 <li><a href="/mame-ngone-sy">/mame-ngone-sy</a></li>
                 <li><a href="/oulimata-cissokho">/oulimata-cissokho</a></li>
                 <li><a href="/yara-coulibaly">/yara-coulibaly</a></li>
+                <li><a href="/rabyatou-diallo">/rabyatou-diallo</a></li>
                 <li><a href="/powertech-digital-cards">/powertech-digital-cards</a></li>
               </ul>
             </div>
