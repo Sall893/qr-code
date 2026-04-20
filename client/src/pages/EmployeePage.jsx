@@ -127,6 +127,15 @@ const EmployeePage = () => {
                     photo_url: '/images/rabyatou.jpg',
                     linkedin_personal: 'https://linkedin.com/'
                 };
+            } else if (slug === 'mariama-tine') {
+                localData = {
+                    full_name: 'MARIAMA TINE',
+                    position: 'Secrétaire d\'administration',
+                    phone: '+221 77 124 34 55',
+                    email: 'mariama.tine@power-techservices.com',
+                    photo_url: '/images/mariama.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
             }
 
             if (localData) {
@@ -147,6 +156,7 @@ const EmployeePage = () => {
                     if (slug === 'oulimata-cissokho') empData.photo_url = '/images/oulimata.jpeg';
                     if (slug === 'yara-coulibaly') empData.photo_url = '/images/gorgui.jpeg';
                     if (slug === 'rabyatou-diallo') empData.photo_url = '/images/rabyatou.jpg';
+                    if (slug === 'mariama-tine') empData.photo_url = '/images/mariama.jpeg';
 
                     setEmployee(empData);
                 }
