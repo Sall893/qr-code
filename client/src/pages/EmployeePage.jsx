@@ -145,6 +145,15 @@ const EmployeePage = () => {
                     photo_url: '/images/houleye.jpeg',
                     linkedin_personal: 'https://linkedin.com/'
                 };
+            } else if (slug === 'oumy-mboup') {
+                localData = {
+                    full_name: 'OUMY MBOUP',
+                    position: 'Sales & Tender Manager',
+                    phone: '+221 76 624 89 98',
+                    email: 'oumy.mboup@power-techservices.com',
+                    photo_url: '/images/oumy.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
             }
 
             if (localData) {
@@ -167,6 +176,7 @@ const EmployeePage = () => {
                     if (slug === 'rabyatou-diallo') empData.photo_url = '/images/rabyatou.jpg';
                     if (slug === 'mariama-tine') empData.photo_url = '/images/mariama.jpeg';
                     if (slug === 'houleye-sy') empData.photo_url = '/images/houleye.jpeg';
+                    if (slug === 'oumy-mboup') empData.photo_url = '/images/oumy.jpeg';
 
                     setEmployee(empData);
                 }

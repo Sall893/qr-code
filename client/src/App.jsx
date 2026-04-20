@@ -26,6 +26,7 @@ function App() {
                 <li><a href="/rabyatou-diallo">/rabyatou-diallo</a></li>
                 <li><a href="/mariama-tine">/mariama-tine</a></li>
                 <li><a href="/houleye-sy">/houleye-sy</a></li>
+                <li><a href="/oumy-mboup">/oumy-mboup</a></li>
                 <li><a href="/powertech-digital-cards">/powertech-digital-cards</a></li>
               </ul>
             </div>
