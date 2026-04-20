@@ -18,7 +18,7 @@ const EmployeePage = () => {
         maps_link: "https://maps.google.com/?q=PowerTech+Engineering+Services+Dakar",
         website: "https://power-techservices.com",
         calendly: "https://calendly.com",
-        linkedin: "https://linkedin.com/company/powertech",
+        linkedin: "https://www.linkedin.com/company/powertech-engineering-group/",
 
         formatted_address: {
             line1: "Cité Tawfekh",
@@ -47,10 +47,10 @@ const EmployeePage = () => {
         projects_url: "https://power-techservices.com/projets/",
 
         socials: {
-            instagram: "https://instagram.com",
-            linkedin: "https://linkedin.com",
+            instagram: "https://www.instagram.com/powertech975?igsh=NWFpcXgxdDJsOG41&utm_source=qr",
+            linkedin: "https://www.linkedin.com/company/powertech-engineering-group/",
             x: "https://x.com",
-            facebook: "https://facebook.com",
+            facebook: "https://www.facebook.com/share/1SZMJ8mxgW/?mibextid=wwXIfr",
             youtube: "https://youtube.com"
         }
     };
