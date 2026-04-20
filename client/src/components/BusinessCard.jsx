@@ -251,7 +251,7 @@ END:VCARD`;
                     <div className="space-y-3 mb-8">
                         <ActionCard icon={<Calendar size={18} />} title="Rendez-vous" subtitle="Réserver un créneau" href={company.calendly} color="text-teal-600" bg="bg-teal-50" delay="400ms" />
                         <ActionCard icon={<Globe size={18} />} title="Site Internet" subtitle="Visiter powertech.com" href={company.website} color="text-indigo-600" bg="bg-indigo-50" delay="500ms" />
-                        <ActionCard icon={<Linkedin size={18} />} title="LinkedIn" subtitle="Voir le profil complet" href={employee.linkedin_personal} color="text-blue-600" bg="bg-blue-50" delay="600ms" />
+                        <ActionCard icon={<Linkedin size={18} />} title="LinkedIn" subtitle="Voir le profil complet" href={company.linkedin} color="text-blue-600" bg="bg-blue-50" delay="600ms" />
                         <ActionCard icon={<LayoutGrid size={18} />} title="Intranet" subtitle="Accès sécurisé" href="https://powertech-intranet-pro.vercel.app" color="text-orange-600" bg="bg-orange-50" delay="700ms" />
                     </div>
 
