@@ -159,7 +159,7 @@ const EmployeePage = () => {
                     full_name: 'MAME DIARRA SAGNE',
                     position: 'Comptable/Admi',
                     phone: '+221 76 622 21 84',
-                    email: 'mame.sagne@power-techservices.com',
+                    email: 'msagne@power-techservices.com',
                     photo_url: '/images/Mame diarra.jpeg',
                     linkedin_personal: 'https://linkedin.com/'
                 };
