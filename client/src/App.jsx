@@ -20,6 +20,10 @@ function App() {
               <ul className="list-disc pl-5 text-blue-600">
                 <li><a href="/fama-diaw">/fama-diaw</a></li>
                 <li><a href="/souleymane-sall">/souleymane-sall</a></li>
+                <li><a href="/mame-ngone-sy">/mame-ngone-sy</a></li>
+                <li><a href="/oulimata-cissokho">/oulimata-cissokho</a></li>
+                <li><a href="/yara-coulibaly">/yara-coulibaly</a></li>
+                <li><a href="/powertech-digital-cards">/powertech-digital-cards</a></li>
               </ul>
             </div>
           </div>

@@ -184,7 +184,7 @@ END:VCARD`;
                     <div className="bg-white rounded-3xl overflow-hidden shadow-2xl mx-2 mt-8 animate-slide-up" style={{ animationDelay: '400ms' }}>
                         {/* White Header with Logo */}
                         <div className="bg-white p-6 flex justify-center border-b border-gray-100">
-                            <img src="/images/logo_powertech.png" alt="PowerTech Logo" className="h-12 object-contain" />
+                            <img src="/images/logo.png" alt="PowerTech Logo" className="h-12 object-contain" />
                         </div>
 
                         {/* Large Portrait Photo */}
@@ -229,7 +229,7 @@ END:VCARD`;
                     <div className="bg-white rounded-3xl overflow-hidden shadow-2xl mx-2 mt-8 animate-slide-up" style={{ animationDelay: '600ms' }}>
                         {/* White Header with Logo */}
                         <div className="bg-white p-6 flex justify-center border-b border-gray-100">
-                            <img src="/images/logo_powertech.png" alt="PowerTech Logo" className="h-12 object-contain" />
+                            <img src="/images/logo.png" alt="PowerTech Logo" className="h-12 object-contain" />
                         </div>
 
                         {/* Team Image */}
@@ -252,7 +252,7 @@ END:VCARD`;
                         <ActionCard icon={<Calendar size={18} />} title="Rendez-vous" subtitle="Réserver un créneau" href={company.calendly} color="text-teal-600" bg="bg-teal-50" delay="400ms" />
                         <ActionCard icon={<Globe size={18} />} title="Site Internet" subtitle="Visiter powertech.com" href={company.website} color="text-indigo-600" bg="bg-indigo-50" delay="500ms" />
                         <ActionCard icon={<Linkedin size={18} />} title="LinkedIn" subtitle="Voir le profil complet" href={employee.linkedin_personal} color="text-blue-600" bg="bg-blue-50" delay="600ms" />
-                        <ActionCard icon={<LayoutGrid size={18} />} title="Intranet" subtitle="Accès sécurisé" href="https://intranet-powertech-2tqd.vercel.app/" color="text-orange-600" bg="bg-orange-50" delay="700ms" />
+                        <ActionCard icon={<LayoutGrid size={18} />} title="Intranet" subtitle="Accès sécurisé" href="https://powertech-intranet-pro.vercel.app" color="text-orange-600" bg="bg-orange-50" delay="700ms" />
                     </div>
 
                     {/* --- QUI SOMMES-NOUS --- */}
@@ -260,7 +260,7 @@ END:VCARD`;
                         <h2 className="text-[#ea580c] text-xl font-serif tracking-widest uppercase mb-4">QUI SOMMES-NOUS ?</h2>
                         <div className="space-y-4">
                             <p className="text-gray-300 text-sm font-light leading-relaxed">
-                                Cree en 2024 <span className="text-white font-medium">POWERTECH ENGINEERING SERVICES</span> est une entreprise qui mène ses activités dans le domaine de l’exploitation et de la maintenance des centrales électriques (thermique et renouvelable), des tests, inspections et contrôle technique des équipements industriels, de la fournitures des équipements industriels et des pièces de rechange, de la maintenance des équipements maritimes, de la gestion des projets d’énergie et construction (EPC), de la consultance et de la formation pratique.
+                                Cree en 2024 <span className="text-white font-medium">POWERTECH ENGINEERING GROUP</span> est une entreprise qui mène ses activités dans le domaine de l’exploitation et de la maintenance des centrales électriques (thermique et renouvelable), des tests, inspections et contrôle technique des équipements industriels, de la fournitures des équipements industriels et des pièces de rechange, de la maintenance des équipements maritimes, de la gestion des projets d’énergie et construction (EPC), de la consultance et de la formation pratique.
                             </p>
                             <p className="text-gray-300 text-sm font-light leading-relaxed border-t border-gray-700/50 pt-4">
                                 Elle intervient dans les secteurs de l’énergie, de la mine, de l’industrie de la marine et du pétrole et gaz.
@@ -278,17 +278,13 @@ END:VCARD`;
                         </div>
                     </div>
 
-                    {/* YouTube Video Section */}
-                    <div className="mb-8 animate-slide-up" style={{ animationDelay: '750ms' }}>
-                        <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-black aspect-video relative">
-                            <iframe
-                                className="absolute inset-0 w-full h-full"
-                                src="https://www.youtube.com/embed/OWaoiMRYmc0"
-                                title="Powertech Services"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                            ></iframe>
+                    {/* Marketing Banners (Replaced Video) */}
+                    <div className="grid grid-cols-2 gap-4 mb-8 animate-slide-up" style={{ animationDelay: '750ms' }}>
+                        <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 group aspect-square">
+                            <img src="/images/6.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Project 1" />
+                        </div>
+                        <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 group aspect-square">
+                            <img src="/images/7.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" alt="Project 2" />
                         </div>
                     </div>
 
@@ -316,7 +312,7 @@ END:VCARD`;
                         {/* Copyright Orange Card */}
                         <div className="bg-[#ea580c] rounded-[2.5rem] p-6 text-center shadow-xl">
                             <p className="text-white text-sm font-serif leading-tight tracking-wide">
-                                © 2025 POWERTECH ENGINEERING SERVICES All Rights Reserved powered by powertech
+                                © 2025 POWERTECH ENGINEERING GROUP All Rights Reserved powered by powertech
                             </p>
                         </div>
 
@@ -326,7 +322,7 @@ END:VCARD`;
                                 <img src="/images/sdg_wheel.png" alt="SDGs" className="w-full h-full object-contain" />
                             </div>
                             <div className="bg-white p-3 rounded-2xl ml-4 flex-1 flex justify-center items-center h-16">
-                                <img src="/images/logo_powertech.png" alt="Powertech Logo" className="h-full object-contain" />
+                                <img src="/images/logo.png" alt="Powertech Logo" className="h-full object-contain" />
                             </div>
                         </div>
                     </div>

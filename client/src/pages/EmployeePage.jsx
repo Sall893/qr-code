@@ -12,8 +12,8 @@ const EmployeePage = () => {
 
     // Full Company Data with Images and Logo
     const companyData = {
-        name: "PowerTech Engineering Services",
-        address: "Immeuble Rassoul, Cite Thianar Ndoye Rond point Sipres, ZAC Mbao BP 20000 Rufisque, Dakar SÉNÉGAL",
+        name: "PowerTech Engineering Group",
+        address: "Cité Tawfekh, Villa 102, sortie 9, Autoroute à péage",
         logo_url: "https://ui-avatars.com/api/?name=P+E&background=0f172a&color=3b82f6&size=128&bold=true&length=2", // Placeholder Logo
         maps_link: "https://maps.google.com/?q=PowerTech+Engineering+Services+Dakar",
         website: "https://power-techservices.com",
@@ -21,9 +21,9 @@ const EmployeePage = () => {
         linkedin: "https://linkedin.com/company/powertech",
 
         formatted_address: {
-            line1: "Immeuble Rassoul, Cite Thianar Ndoye",
-            line2: "Rond point Sipres, ZAC Mbao",
-            line3: "BP 20000 Rufisque, Dakar SÉNÉGAL"
+            line1: "Cité Tawfekh",
+            line2: "Villa 102, sortie 9",
+            line3: "Autoroute à péage"
         },
 
         // Industry Images (Embedded SVGs to guarantee display without internet/external blocking)
@@ -56,60 +56,93 @@ const EmployeePage = () => {
     };
 
     useEffect(() => {
-        // Splash Screen Timer
+        // Splash Screen Timer (Set to 2s as requested)
         const timer = setTimeout(() => {
             setShowSplash(false);
-        }, 3000);
+        }, 2000);
 
         const fetchEmployee = async () => {
+            // 1. Initial Local Data (Instant display)
+            let localData = null;
+            if (slug === 'fama-diaw') {
+                localData = {
+                    full_name: 'FAMA DIAW',
+                    position: 'Responsable Achat et Logistique',
+                    phone: '+221 78 659 02 95',
+                    email: 'fama.diaw@power-techservices.com',
+                    photo_url: '/images/fama.jpeg',
+                    linkedin_personal: 'https://linkedin.com/in/fama-diaw'
+                };
+            } else if (slug === 'souleymane-sall') {
+                localData = {
+                    full_name: 'SOULEYMANE SALL',
+                    position: 'Developpeur',
+                    phone: '+221 77 755 68 99',
+                    email: 'souleymane.sall@power-techservices.com',
+                    photo_url: '/images/souleymane_profile.png',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'powertech-digital-cards') {
+                localData = {
+                    full_name: 'PowerTech',
+                    position: 'Digital Cards',
+                    phone: '',
+                    email: 'contact@power-techservices.com',
+                    photo_url: '/images/logo.png',
+                    linkedin_personal: 'https://linkedin.com/company/powertech'
+                };
+            } else if (slug === 'mame-ngone-sy') {
+                localData = {
+                    full_name: 'MAME NGONÉ SY',
+                    position: 'Technical Sales Engineer',
+                    phone: '+221 76 624 89 75',
+                    email: 'sales2@power-techservices.com',
+                    photo_url: '/images/Ngoné.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'oulimata-cissokho') {
+                localData = {
+                    full_name: 'OULIMATA CISSOKHO',
+                    position: 'Technical Sales Engineer',
+                    phone: '+221 76 624 89 85',
+                    email: 'sales3@power-techservices.com',
+                    photo_url: '/images/oulimata.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'yara-coulibaly') {
+                localData = {
+                    full_name: 'YARA GORGUI COULIBALY KADAM',
+                    position: 'Gestionnaire de stock et logisticien',
+                    phone: '+221 77 628 88 75',
+                    email: 'yara.coulibaly@power-techservices.com',
+                    photo_url: '/images/gorgui.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            }
+
+            if (localData) {
+                setEmployee(localData);
+                setLoading(false);
+            }
+
+            // 2. Background Backend Sync
             try {
-                let empData;
-                try {
-                    // Backend fetch
-                    const response = await axios.get(`https://qr-code-a0un.onrender.com/api/employees/${slug}`);
-                    empData = response.data;
-                } catch (e) {
-                    console.warn("Backend fetch failed, using fallback");
-                }
+                const response = await axios.get(`https://qr-code-a0un.onrender.com/api/employees/${slug}`);
+                if (response.data && response.data.full_name) {
+                    const empData = response.data;
+                    // Keep local photo override if needed
+                    if (slug === 'fama-diaw') empData.photo_url = '/images/fama.jpeg';
+                    if (slug === 'souleymane-sall') empData.photo_url = '/images/souleymane_profile.png';
+                    if (slug === 'powertech-digital-cards') empData.photo_url = '/images/logo.png';
+                    if (slug === 'mame-ngone-sy') empData.photo_url = '/images/Ngoné.jpeg';
+                    if (slug === 'oulimata-cissokho') empData.photo_url = '/images/oulimata.jpeg';
+                    if (slug === 'yara-coulibaly') empData.photo_url = '/images/gorgui.jpeg';
 
-                // Fallback Data
-                if ((!empData || !empData.full_name) && slug === 'fama-diaw') {
-                    empData = {
-                        full_name: 'FAMA DIAW',
-                        position: 'Executive Assistant et procurement coordinateur',
-                        phone: '+221 78 659 02 95',
-                        email: 'fama.diaw@power-techservices.com',
-                        // Using real uploaded photo
-                        photo_url: '/images/fama_profile.jpg',
-                        linkedin_personal: 'https://linkedin.com/in/fama-diaw'
-                    };
-                } else if ((!empData || !empData.full_name) && slug === 'souleymane-sall') {
-                    empData = {
-                        full_name: 'SOULEYMANE SALL',
-                        position: 'Developpeur',
-                        phone: '+221 77 755 68 99',
-                        email: 'souleymane.sall@power-techservices.com',
-                        // Specific photo
-                        photo_url: '/images/souleymane_profile.png',
-                        linkedin_personal: 'https://linkedin.com/'
-                    };
-                }
-
-                if (empData) {
-                    // FORCE LOCAL IMAGE OVERRIDE to ensure they display
-                    if (slug === 'fama-diaw') {
-                        empData.photo_url = '/images/fama_profile_v2.png';
-                    }
-                    if (slug === 'souleymane-sall') {
-                        empData.photo_url = '/images/souleymane_profile.png';
-                    }
                     setEmployee(empData);
-                } else {
-                    setError("Employee Not Found");
                 }
-
-            } catch (err) {
-                setError("Error loading profile");
+            } catch (e) {
+                console.warn("Backend fetch failed/timed out, using local data.");
+                if (!localData) setError("Error loading profile");
             } finally {
                 setLoading(false);
             }
