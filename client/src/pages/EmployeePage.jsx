@@ -136,6 +136,15 @@ const EmployeePage = () => {
                     photo_url: '/images/mariama.jpeg',
                     linkedin_personal: 'https://linkedin.com/'
                 };
+            } else if (slug === 'houleye-sy') {
+                localData = {
+                    full_name: 'HOULEYE SY',
+                    position: 'Responsable Marketing & Communication Relations clients & RSE',
+                    phone: '+221 77 806 13 02',
+                    email: 'houleyesy@power-techservices.com',
+                    photo_url: '/images/houleye.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
             }
 
             if (localData) {
@@ -157,6 +166,7 @@ const EmployeePage = () => {
                     if (slug === 'yara-coulibaly') empData.photo_url = '/images/gorgui.jpeg';
                     if (slug === 'rabyatou-diallo') empData.photo_url = '/images/rabyatou.jpg';
                     if (slug === 'mariama-tine') empData.photo_url = '/images/mariama.jpeg';
+                    if (slug === 'houleye-sy') empData.photo_url = '/images/houleye.jpeg';
 
                     setEmployee(empData);
                 }
