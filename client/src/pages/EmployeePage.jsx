@@ -154,6 +154,15 @@ const EmployeePage = () => {
                     photo_url: '/images/oumy.jpeg',
                     linkedin_personal: 'https://linkedin.com/'
                 };
+            } else if (slug === 'mame-diarra-sagne') {
+                localData = {
+                    full_name: 'MAME DIARRA SAGNE',
+                    position: 'Comptable/Admi',
+                    phone: '+221 76 622 21 84',
+                    email: 'mame.sagne@power-techservices.com',
+                    photo_url: '/images/Mame diarra.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
             }
 
             if (localData) {
@@ -177,6 +186,7 @@ const EmployeePage = () => {
                     if (slug === 'mariama-tine') empData.photo_url = '/images/mariama.jpeg';
                     if (slug === 'houleye-sy') empData.photo_url = '/images/houleye.jpeg';
                     if (slug === 'oumy-mboup') empData.photo_url = '/images/oumy.jpeg';
+                    if (slug === 'mame-diarra-sagne') empData.photo_url = '/images/Mame diarra.jpeg';
 
                     setEmployee(empData);
                 }
