@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
     Phone, Mail, MapPin, Calendar, Globe, Linkedin,
     Share2, UserPlus, Briefcase, Activity, ChevronRight,
-    Instagram, Facebook, Youtube, X, LayoutGrid, CheckCircle2,
+    Instagram, Facebook, LayoutGrid, CheckCircle2,
     MessageSquare, QrCode, Plus, Save
 } from 'lucide-react';
 
@@ -99,9 +99,15 @@ END:VCARD`;
                     <h1 className="text-2xl font-black text-gray-800 tracking-tight leading-tight animate-fade-in">
                         {employee.full_name}
                     </h1>
-                    <p className="text-orange-600 font-bold text-xs uppercase tracking-widest mt-2 mb-6 animate-slide-up" style={{ animationDelay: '100ms' }}>
+                    <p className="text-orange-600 font-bold text-xs uppercase tracking-widest mt-2 mb-1 animate-slide-up" style={{ animationDelay: '100ms' }}>
                         {employee.position}
                     </p>
+                    {employee.segment && (
+                        <p className="text-gray-500 font-medium text-[10px] uppercase tracking-wider mb-6 animate-slide-up" style={{ animationDelay: '150ms' }}>
+                            {employee.segment}
+                        </p>
+                    )}
+                    {!employee.segment && <div className="mb-6"></div>}
 
                     {/* --- NEW ICON ROW (Added per request) --- */}
                     <div className="flex justify-center gap-4 mb-8 animate-slide-up" style={{ animationDelay: '200ms' }}>
@@ -332,9 +338,7 @@ END:VCARD`;
                         {[
                             { icon: <Instagram size={18} />, href: company.socials.instagram },
                             { icon: <Linkedin size={18} />, href: company.socials.linkedin },
-                            { icon: <X size={18} />, href: company.socials.x },
                             { icon: <Facebook size={18} />, href: company.socials.facebook },
-                            { icon: <Youtube size={18} />, href: company.socials.youtube },
                         ].map((social, i) => (
                             <a key={i} href={social.href} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-gray-50 text-gray-400 flex items-center justify-center hover:bg-orange-500 hover:text-white hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
                                 {social.icon}

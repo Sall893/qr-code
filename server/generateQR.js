@@ -11,7 +11,14 @@ if (!fs.existsSync(outputDir)) {
 
 const employees = [
     { slug: 'fama-diaw', name: 'Fama Diaw' },
-    { slug: 'souleymane-sall', name: 'Souleymane Sall' }
+    { slug: 'souleymane-sall', name: 'Souleymane Sall' },
+    { slug: 'ibrahima-sene', name: 'Ibrahima Sene' },
+    { slug: 'kine-gueye-sambe', name: 'Kiné Gueye Sambe' },
+    { slug: 'ngone-thiam', name: 'Ngoné Thiam' },
+    { slug: 'abdoul-aziz-fall', name: 'Abdoul Aziz Fall' },
+    { slug: 'anta-gaye', name: 'Anta Gaye' },
+    { slug: 'mademba-thiam', name: 'Mademba Thiam' },
+    { slug: 'papa-dethie-thiam', name: 'Papa Dethie Thiam' }
 ];
 
 // Production domain

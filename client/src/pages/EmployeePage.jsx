@@ -15,7 +15,7 @@ const EmployeePage = () => {
         name: "PowerTech Engineering Group",
         address: "Cité Tawfekh, Villa 102, sortie 9, Autoroute à péage",
         logo_url: "https://ui-avatars.com/api/?name=P+E&background=0f172a&color=3b82f6&size=128&bold=true&length=2", // Placeholder Logo
-        maps_link: "https://maps.google.com/?q=PowerTech+Engineering+Services+Dakar",
+        maps_link: "https://www.google.com/maps/place/Station+Eydon+-+Zac+Mbao/@14.7421693,-17.2872302,390m/data=!3m1!1e3!4m14!1m7!3m6!1s0xec1a0003e8080b1:0x76ec1ca3168cd8ca!2sStation+Eydon+-+Zac+Mbao!8m2!3d14.7427737!4d-17.2886201!16s%2Fg%2F11c5btp0xj!3m5!1s0xec1a0003e8080b1:0x76ec1ca3168cd8ca!8m2!3d14.7427737!4d-17.2886201!16s%2Fg%2F11c5btp0xj?entry=ttu&g_ep=EgoyMDI2MDQyMC4wIKXMDSoASAFQAw%3D%3D",
         website: "https://power-techservices.com",
         calendly: "https://calendly.com",
         linkedin: "https://www.linkedin.com/company/powertech-engineering-group/",
@@ -49,9 +49,7 @@ const EmployeePage = () => {
         socials: {
             instagram: "https://www.instagram.com/powertech975?igsh=NWFpcXgxdDJsOG41&utm_source=qr",
             linkedin: "https://www.linkedin.com/company/powertech-engineering-group/",
-            x: "https://x.com",
-            facebook: "https://www.facebook.com/share/1SZMJ8mxgW/?mibextid=wwXIfr",
-            youtube: "https://youtube.com"
+            facebook: "https://www.facebook.com/share/1SZMJ8mxgW/?mibextid=wwXIfr"
         }
     };
 
@@ -157,10 +155,74 @@ const EmployeePage = () => {
             } else if (slug === 'mame-diarra-sagne') {
                 localData = {
                     full_name: 'MAME DIARRA SAGNE',
-                    position: 'Comptable/Admi',
+                    position: 'Comptable/Admin',
                     phone: '+221 76 622 21 84',
                     email: 'msagne@power-techservices.com',
                     photo_url: '/images/Mame diarra.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'ibrahima-sene') {
+                localData = {
+                    full_name: 'IBRAHIMA SENE',
+                    position: 'Superviseur Planificateur des Travaux',
+                    phone: '+221 76 370 75 67',
+                    email: 'ibrahima.sene@power-techservices.com',
+                    photo_url: '/images/ibrahima.PNG',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'kine-gueye-sambe') {
+                localData = {
+                    full_name: 'KINÉ GUEYE SAMBE',
+                    position: 'Stagiaire génie civil',
+                    phone: '+221 77 238 51 64',
+                    email: 'kine.sambe@power-techservices.com',
+                    photo_url: '/images/Kiné.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'ngone-thiam') {
+                localData = {
+                    full_name: 'NGONÉ THIAM',
+                    position: 'Responsable qualité et suivi garantie',
+                    phone: '+221 77 445 89 81',
+                    email: 'ngone.thiam@power-techservices.com',
+                    photo_url: '/images/ngone.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'abdoul-aziz-fall') {
+                localData = {
+                    full_name: 'ABDOUL AZIZ FALL',
+                    position: 'ingénieur technico-commercial et bureau d’etude',
+                    segment: 'Mine, industrie, Oil & gas',
+                    phone: '+221 76 624 89 91',
+                    email: 'sales1@power-techservices.com',
+                    photo_url: '/images/abdoul.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'anta-gaye') {
+                localData = {
+                    full_name: 'ANTA GAYE',
+                    position: 'QSHE & Certification Coordinator',
+                    phone: '+221 76 624 89 65',
+                    email: 'anta.gaye@power-techservices.com',
+                    photo_url: '/images/anta.JPEG',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'mademba-thiam') {
+                localData = {
+                    full_name: 'MADEMBA THIAM',
+                    position: 'Chief Executive Officer Energy EPC Projects Expert PMP',
+                    phone: '+221 77 643 20 30',
+                    email: 'mademba.thiam@power-techservices.com',
+                    photo_url: '/images/mademba.jpeg',
+                    linkedin_personal: 'https://linkedin.com/'
+                };
+            } else if (slug === 'papa-dethie-thiam') {
+                localData = {
+                    full_name: 'PAPA DETHIE THIAM',
+                    position: 'Infographiste / designer',
+                    phone: '+221 76 227 12 12',
+                    email: 'dethie.thiam@power-techservices.com',
+                    photo_url: '/images/dethie.jpeg',
                     linkedin_personal: 'https://linkedin.com/'
                 };
             }
@@ -187,6 +249,13 @@ const EmployeePage = () => {
                     if (slug === 'houleye-sy') empData.photo_url = '/images/houleye.jpeg';
                     if (slug === 'oumy-mboup') empData.photo_url = '/images/oumy.jpeg';
                     if (slug === 'mame-diarra-sagne') empData.photo_url = '/images/Mame diarra.jpeg';
+                    if (slug === 'ibrahima-sene') empData.photo_url = '/images/ibrahima.PNG';
+                    if (slug === 'kine-gueye-sambe') empData.photo_url = '/images/Kiné.jpeg';
+                    if (slug === 'ngone-thiam') empData.photo_url = '/images/ngone.jpeg';
+                    if (slug === 'abdoul-aziz-fall') empData.photo_url = '/images/abdoul.jpeg';
+                    if (slug === 'anta-gaye') empData.photo_url = '/images/anta.JPEG';
+                    if (slug === 'mademba-thiam') empData.photo_url = '/images/mademba.jpeg';
+                    if (slug === 'papa-dethie-thiam') empData.photo_url = '/images/dethie.jpeg';
 
                     setEmployee(empData);
                 }
