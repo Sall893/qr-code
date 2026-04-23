@@ -12,6 +12,14 @@ if (!fs.existsSync(outputDir)) {
 const employees = [
     { slug: 'fama-diaw', name: 'Fama Diaw' },
     { slug: 'souleymane-sall', name: 'Souleymane Sall' },
+    { slug: 'mame-ngone-sy', name: 'Mame Ngoné Sy' },
+    { slug: 'oulimata-cissokho', name: 'Oulimata Cissokho' },
+    { slug: 'yara-coulibaly', name: 'Yara Gorgui Coulibaly Kadam' },
+    { slug: 'rabyatou-diallo', name: 'Rabyatou Diallo' },
+    { slug: 'mariama-tine', name: 'Mariama Tine' },
+    { slug: 'houleye-sy', name: 'Houleye Sy' },
+    { slug: 'oumy-mboup', name: 'Oumy Mboup' },
+    { slug: 'mame-diarra-sagne', name: 'Mame Diarra Sagne' },
     { slug: 'ibrahima-sene', name: 'Ibrahima Sene' },
     { slug: 'kine-gueye-sambe', name: 'Kiné Gueye Sambe' },
     { slug: 'ngone-thiam', name: 'Ngoné Thiam' },
@@ -26,53 +34,25 @@ const baseUrl = 'https://qr-code-eight-inky.vercel.app';
 const logoPath = path.join(__dirname, '..', 'client', 'public', 'images', 'logo_powertech.png');
 
 async function generate() {
-    console.log('Generating QR Codes with Logo...');
+    console.log('Generating Plain Black QR Codes...');
 
     try {
-        // Load logo
-        if (!fs.existsSync(logoPath)) {
-            throw new Error(`Logo not found at ${logoPath}`);
-        }
-        const logo = await Jimp.read(logoPath);
-
         for (const emp of employees) {
             const url = `${baseUrl}/${emp.slug}`;
             const filePath = path.join(outputDir, `${emp.slug}.png`);
 
-            // 1. Generate QR Code as Buffer (using High Error Correction for logo overlay)
-            const qrBuffer = await QRCode.toBuffer(url, {
-                errorCorrectionLevel: 'H',
-                margin: 2,
+            // Generate Plain QR Code
+            await QRCode.toFile(filePath, url, {
+                errorCorrectionLevel: 'M',
+                margin: 4,
                 width: 1024,
                 color: {
-                    dark: '#ea580c', // PowerTech Orange
+                    dark: '#000000', // Black
                     light: '#ffffff'
                 }
             });
 
-            // 2. Load QR into Jimp
-            const qrImage = await Jimp.read(qrBuffer);
-
-            // 3. Resize logo (should be small enough to keep QR readable, typical max 25%)
-            const logoWidth = qrImage.bitmap.width * 0.22;
-            logo.resize({ w: logoWidth });
-
-            // 4. Create a white background for the logo to improve readability
-            const whiteBg = new Jimp({
-                width: Math.floor(logo.bitmap.width + 20),
-                height: Math.floor(logo.bitmap.height + 20),
-                color: 0xFFFFFFFF
-            });
-            whiteBg.composite(logo, 10, 10);
-
-            // 5. Center logo on QR
-            const x = (qrImage.bitmap.width - whiteBg.bitmap.width) / 2;
-            const y = (qrImage.bitmap.height - whiteBg.bitmap.height) / 2;
-            qrImage.composite(whiteBg, x, y);
-
-            // 6. Save
-            await qrImage.write(filePath);
-            console.log(`✅ Generated with logo for ${emp.name}: ${filePath}`);
+            console.log(`✅ Generated for ${emp.name}: ${filePath}`);
         }
     } catch (err) {
         console.error('❌ Generation process failed:', err.message);

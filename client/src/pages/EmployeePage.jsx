@@ -176,7 +176,7 @@ const EmployeePage = () => {
                     position: 'Stagiaire génie civil',
                     phone: '+221 77 238 51 64',
                     email: 'kine.sambe@power-techservices.com',
-                    photo_url: '/images/Kiné.jpeg',
+                    photo_url: '/images/sambe.png',
                     linkedin_personal: 'https://linkedin.com/'
                 };
             } else if (slug === 'ngone-thiam') {
@@ -250,7 +250,7 @@ const EmployeePage = () => {
                     if (slug === 'oumy-mboup') empData.photo_url = '/images/oumy.jpeg';
                     if (slug === 'mame-diarra-sagne') empData.photo_url = '/images/Mame diarra.jpeg';
                     if (slug === 'ibrahima-sene') empData.photo_url = '/images/ibrahima.PNG';
-                    if (slug === 'kine-gueye-sambe') empData.photo_url = '/images/Kiné.jpeg';
+                    if (slug === 'kine-gueye-sambe') empData.photo_url = '/images/sambe.png';
                     if (slug === 'ngone-thiam') empData.photo_url = '/images/ngone.jpeg';
                     if (slug === 'abdoul-aziz-fall') empData.photo_url = '/images/abdoul.jpeg';
                     if (slug === 'anta-gaye') empData.photo_url = '/images/anta.JPEG';
