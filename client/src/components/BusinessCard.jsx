@@ -58,7 +58,7 @@ END:VCARD`;
                     {/* Hero Image */}
                     <div className="absolute inset-0">
                         <img
-                            src="/images/hero.png"
+                            src="/photos/WhatsApp Image 2026-04-23 at 21.17.01 (1).jpeg"
                             alt="Cover"
                             className="w-full h-full object-cover"
                         />
@@ -241,7 +241,7 @@ END:VCARD`;
                         {/* Team Image */}
                         <div className="bg-gray-50 flex justify-center pt-0 overflow-hidden">
                             <img
-                                src="/images/teams_working.png"
+                                src="/photos/WhatsApp Image 2026-04-23 at 21.17.03.jpeg"
                                 alt="PowerTech Team"
                                 className="w-full h-auto object-cover"
                             />
@@ -257,7 +257,7 @@ END:VCARD`;
                     <div className="space-y-3 mb-8">
                         <ActionCard icon={<Calendar size={18} />} title="Rendez-vous" subtitle="Réserver un créneau" href={company.calendly} color="text-teal-600" bg="bg-teal-50" delay="400ms" />
                         <ActionCard icon={<Globe size={18} />} title="Site Internet" subtitle="Visiter powertech.com" href={company.website} color="text-indigo-600" bg="bg-indigo-50" delay="500ms" />
-                        <ActionCard icon={<Linkedin size={18} />} title="LinkedIn" subtitle="Voir le profil complet" href={company.linkedin} color="text-blue-600" bg="bg-blue-50" delay="600ms" />
+                        <ActionCard icon={<Linkedin size={18} />} title="LinkedIn" subtitle="Voir le profil complet" href={employee.linkedin_personal || company.linkedin} color="text-blue-600" bg="bg-blue-50" delay="600ms" />
                         <ActionCard icon={<LayoutGrid size={18} />} title="Intranet" subtitle="Accès sécurisé" href="https://powertech-intranet-pro.vercel.app" color="text-orange-600" bg="bg-orange-50" delay="700ms" />
                     </div>
 

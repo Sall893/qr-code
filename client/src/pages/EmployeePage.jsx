@@ -69,7 +69,7 @@ const EmployeePage = () => {
                     phone: '+221 78 659 02 95',
                     email: 'fama.diaw@power-techservices.com',
                     photo_url: '/images/fama.jpeg',
-                    linkedin_personal: 'https://linkedin.com/in/fama-diaw'
+                    linkedin_personal: 'https://www.linkedin.com/in/fama-diaw-2650b6297/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Br2PFl4xZRV%2BSKNYeLWAwTA%3D%3D'
                 };
             } else if (slug === 'souleymane-sall') {
                 localData = {
@@ -78,7 +78,7 @@ const EmployeePage = () => {
                     phone: '+221 77 755 68 99',
                     email: 'souleymane.sall@power-techservices.com',
                     photo_url: '/images/souleymane_profile.png',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/souleymane-sall-b0312a298?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
                 };
             } else if (slug === 'powertech-digital-cards') {
                 localData = {
@@ -87,7 +87,7 @@ const EmployeePage = () => {
                     phone: '',
                     email: 'contact@power-techservices.com',
                     photo_url: '/images/logo.png',
-                    linkedin_personal: 'https://linkedin.com/company/powertech'
+                    linkedin_personal: 'https://www.linkedin.com/company/powertech-engineering-group/'
                 };
             } else if (slug === 'mame-ngone-sy') {
                 localData = {
@@ -95,26 +95,26 @@ const EmployeePage = () => {
                     position: 'Technical Sales Engineer',
                     phone: '+221 76 624 89 75',
                     email: 'sales2@power-techservices.com',
-                    photo_url: '/images/Ngoné.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    photo_url: '/images/ngone 2.jpeg',
+                    linkedin_personal: 'https://www.linkedin.com/in/mame-ngoné-sy-aaa9a91b7?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
                 };
             } else if (slug === 'oulimata-cissokho') {
                 localData = {
-                    full_name: 'OULIMATA CISSOKHO',
+                    full_name: 'OULIMATA BA',
                     position: 'Technical Sales Engineer',
                     phone: '+221 76 624 89 85',
                     email: 'sales3@power-techservices.com',
                     photo_url: '/images/oulimata.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/ndeye-oulimata-ba-27927b8a/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BL5rdPmZWT0mwj58EpZJgCg%3D%3D'
                 };
             } else if (slug === 'yara-coulibaly') {
                 localData = {
                     full_name: 'YARA GORGUI COULIBALY KADAM',
-                    position: 'Gestionnaire de stock et logisticien',
+                    position: 'Responsable de stock et logistique',
                     phone: '+221 77 628 88 75',
                     email: 'yara.coulibaly@power-techservices.com',
                     photo_url: '/images/gorgui.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/y-gorgui-coulibaly-kadam-60b025277?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
                 };
             } else if (slug === 'rabyatou-diallo') {
                 localData = {
@@ -123,7 +123,7 @@ const EmployeePage = () => {
                     phone: '+221 76 622 35 09',
                     email: 'rabyatou.diallo@power-techservices.com',
                     photo_url: '/images/rabyatou.jpg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/rabyatou-malado-diallo-870245218?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
                 };
             } else if (slug === 'mariama-tine') {
                 localData = {
@@ -138,19 +138,19 @@ const EmployeePage = () => {
                 localData = {
                     full_name: 'HOULEYE SY',
                     position: 'Responsable Marketing & Communication Relations clients & RSE',
-                    phone: '+221 77 806 13 02',
+                    phone: '+221 76 624 90 04',
                     email: 'houleyesy@power-techservices.com',
                     photo_url: '/images/houleye.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/houleyesy?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
                 };
             } else if (slug === 'oumy-mboup') {
                 localData = {
                     full_name: 'OUMY MBOUP',
                     position: 'Sales & Tender Manager',
-                    phone: '+221 76 624 89 98',
+                    phone: '+221 78 822 85 85',
                     email: 'oumy.mboup@power-techservices.com',
                     photo_url: '/images/oumy.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/oumy-mboup'
                 };
             } else if (slug === 'mame-diarra-sagne') {
                 localData = {
@@ -159,7 +159,7 @@ const EmployeePage = () => {
                     phone: '+221 76 622 21 84',
                     email: 'msagne@power-techservices.com',
                     photo_url: '/images/Mame diarra.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/mame-diarra-sagne-8a6486192?utm_source=share_via&utm_content=profile&utm_medium=member_android'
                 };
             } else if (slug === 'ibrahima-sene') {
                 localData = {
@@ -168,7 +168,7 @@ const EmployeePage = () => {
                     phone: '+221 76 370 75 67',
                     email: 'ibrahima.sene@power-techservices.com',
                     photo_url: '/images/ibrahima.PNG',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/ibrahima-sene-630737232'
                 };
             } else if (slug === 'kine-gueye-sambe') {
                 localData = {
@@ -177,7 +177,7 @@ const EmployeePage = () => {
                     phone: '+221 77 238 51 64',
                     email: 'kine.sambe@power-techservices.com',
                     photo_url: '/images/sambe.png',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/kine-gueye-sambe?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
                 };
             } else if (slug === 'ngone-thiam') {
                 localData = {
@@ -186,7 +186,7 @@ const EmployeePage = () => {
                     phone: '+221 77 445 89 81',
                     email: 'ngone.thiam@power-techservices.com',
                     photo_url: '/images/ngone.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/ngone-thiam-7a334a337?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
                 };
             } else if (slug === 'abdoul-aziz-fall') {
                 localData = {
@@ -195,8 +195,8 @@ const EmployeePage = () => {
                     segment: 'Mine, industrie, Oil & gas',
                     phone: '+221 76 624 89 91',
                     email: 'sales1@power-techservices.com',
-                    photo_url: '/images/abdoul.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    photo_url: '/images/abdoul 2.jpeg',
+                    linkedin_personal: 'https://www.linkedin.com/in/abdoul-aziz-fall-663b31232?utm_source=share_via&utm_content=profile&utm_medium=member_android'
                 };
             } else if (slug === 'anta-gaye') {
                 localData = {
@@ -204,17 +204,17 @@ const EmployeePage = () => {
                     position: 'QSHE & Certification Coordinator',
                     phone: '+221 76 624 89 65',
                     email: 'anta.gaye@power-techservices.com',
-                    photo_url: '/images/anta.JPEG',
-                    linkedin_personal: 'https://linkedin.com/'
+                    photo_url: '/images/anta 2.jpeg',
+                    linkedin_personal: 'https://www.linkedin.com/in/anta-gaye/en'
                 };
             } else if (slug === 'mademba-thiam') {
                 localData = {
                     full_name: 'MADEMBA THIAM',
-                    position: 'Chief Executive Officer Energy EPC Projects Expert PMP',
+                    position: 'Chief Executive Officier Energy EPC Project Expert,PMP',
                     phone: '+221 77 643 20 30',
                     email: 'mademba.thiam@power-techservices.com',
                     photo_url: '/images/mademba.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/mademba-thiam-26355486?utm_source=share_via&utm_content=profile&utm_medium=member_ios'
                 };
             } else if (slug === 'papa-dethie-thiam') {
                 localData = {
@@ -223,7 +223,7 @@ const EmployeePage = () => {
                     phone: '+221 76 227 12 12',
                     email: 'dethie.thiam@power-techservices.com',
                     photo_url: '/images/dethie.jpeg',
-                    linkedin_personal: 'https://linkedin.com/'
+                    linkedin_personal: 'https://www.linkedin.com/in/papa-dethie-thiam-267395211/'
                 };
             }
 
@@ -238,24 +238,80 @@ const EmployeePage = () => {
                 if (response.data && response.data.full_name) {
                     const empData = response.data;
                     // Keep local photo override if needed
-                    if (slug === 'fama-diaw') empData.photo_url = '/images/fama.jpeg';
-                    if (slug === 'souleymane-sall') empData.photo_url = '/images/souleymane_profile.png';
-                    if (slug === 'powertech-digital-cards') empData.photo_url = '/images/logo.png';
-                    if (slug === 'mame-ngone-sy') empData.photo_url = '/images/Ngoné.jpeg';
-                    if (slug === 'oulimata-cissokho') empData.photo_url = '/images/oulimata.jpeg';
-                    if (slug === 'yara-coulibaly') empData.photo_url = '/images/gorgui.jpeg';
-                    if (slug === 'rabyatou-diallo') empData.photo_url = '/images/rabyatou.jpg';
+                    if (slug === 'fama-diaw') {
+                        empData.photo_url = '/images/fama.jpeg';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/fama-diaw-2650b6297/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Br2PFl4xZRV%2BSKNYeLWAwTA%3D%3D';
+                    }
+                    if (slug === 'souleymane-sall') {
+                        empData.photo_url = '/images/souleymane_profile.png';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/souleymane-sall-b0312a298?utm_source=share_via&utm_content=profile&utm_medium=member_ios';
+                    }
+                    if (slug === 'powertech-digital-cards') {
+                        empData.photo_url = '/images/logo.png';
+                        empData.linkedin_personal = 'https://www.linkedin.com/company/powertech-engineering-group/';
+                    }
+                    if (slug === 'mame-ngone-sy') {
+                        empData.photo_url = '/images/ngone 2.jpeg';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/mame-ngoné-sy-aaa9a91b7?utm_source=share_via&utm_content=profile&utm_medium=member_ios';
+                    }
+                    if (slug === 'oulimata-cissokho') {
+                        empData.photo_url = '/images/oulimata.jpeg';
+                        empData.full_name = 'OULIMATA BA';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/ndeye-oulimata-ba-27927b8a/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BL5rdPmZWT0mwj58EpZJgCg%3D%3D';
+                    }
+                    if (slug === 'yara-coulibaly') {
+                        empData.photo_url = '/images/gorgui.jpeg';
+                        empData.position = 'Responsable de stock et logistique';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/y-gorgui-coulibaly-kadam-60b025277?utm_source=share_via&utm_content=profile&utm_medium=member_ios';
+                    }
+                    if (slug === 'rabyatou-diallo') {
+                        empData.photo_url = '/images/rabyatou.jpg';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/rabyatou-malado-diallo-870245218?utm_source=share_via&utm_content=profile&utm_medium=member_ios';
+                    }
                     if (slug === 'mariama-tine') empData.photo_url = '/images/mariama.jpeg';
-                    if (slug === 'houleye-sy') empData.photo_url = '/images/houleye.jpeg';
-                    if (slug === 'oumy-mboup') empData.photo_url = '/images/oumy.jpeg';
-                    if (slug === 'mame-diarra-sagne') empData.photo_url = '/images/Mame diarra.jpeg';
-                    if (slug === 'ibrahima-sene') empData.photo_url = '/images/ibrahima.PNG';
-                    if (slug === 'kine-gueye-sambe') empData.photo_url = '/images/sambe.png';
-                    if (slug === 'ngone-thiam') empData.photo_url = '/images/ngone.jpeg';
-                    if (slug === 'abdoul-aziz-fall') empData.photo_url = '/images/abdoul.jpeg';
-                    if (slug === 'anta-gaye') empData.photo_url = '/images/anta.JPEG';
-                    if (slug === 'mademba-thiam') empData.photo_url = '/images/mademba.jpeg';
-                    if (slug === 'papa-dethie-thiam') empData.photo_url = '/images/dethie.jpeg';
+                    if (slug === 'houleye-sy') {
+                        empData.photo_url = '/images/houleye.jpeg';
+                        empData.phone = '+221 76 624 90 04';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/houleyesy?utm_source=share_via&utm_content=profile&utm_medium=member_ios';
+                    }
+                    if (slug === 'oumy-mboup') {
+                        empData.photo_url = '/images/oumy.jpeg';
+                        empData.phone = '+221 78 822 85 85';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/oumy-mboup';
+                    }
+                    if (slug === 'mame-diarra-sagne') {
+                        empData.photo_url = '/images/Mame diarra.jpeg';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/mame-diarra-sagne-8a6486192?utm_source=share_via&utm_content=profile&utm_medium=member_android';
+                    }
+                    if (slug === 'ibrahima-sene') {
+                        empData.photo_url = '/images/ibrahima.PNG';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/ibrahima-sene-630737232';
+                    }
+                    if (slug === 'kine-gueye-sambe') {
+                        empData.photo_url = '/images/sambe.png';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/kine-gueye-sambe?utm_source=share_via&utm_content=profile&utm_medium=member_ios';
+                    }
+                    if (slug === 'ngone-thiam') {
+                        empData.photo_url = '/images/ngone.jpeg';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/ngone-thiam-7a334a337?utm_source=share_via&utm_content=profile&utm_medium=member_ios';
+                    }
+                    if (slug === 'abdoul-aziz-fall') {
+                        empData.photo_url = '/images/abdoul 2.jpeg';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/abdoul-aziz-fall-663b31232?utm_source=share_via&utm_content=profile&utm_medium=member_android';
+                    }
+                    if (slug === 'anta-gaye') {
+                        empData.photo_url = '/images/anta 2.jpeg';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/anta-gaye/en';
+                    }
+                    if (slug === 'mademba-thiam') {
+                        empData.photo_url = '/images/mademba.jpeg';
+                        empData.position = 'Chief Executive Officier Energy EPC Project Expert,PMP';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/mademba-thiam-26355486?utm_source=share_via&utm_content=profile&utm_medium=member_ios';
+                    }
+                    if (slug === 'papa-dethie-thiam') {
+                        empData.photo_url = '/images/dethie.jpeg';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/papa-dethie-thiam-267395211/';
+                    }
 
                     setEmployee(empData);
                 }

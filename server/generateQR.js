@@ -13,7 +13,7 @@ const employees = [
     { slug: 'fama-diaw', name: 'Fama Diaw' },
     { slug: 'souleymane-sall', name: 'Souleymane Sall' },
     { slug: 'mame-ngone-sy', name: 'Mame Ngoné Sy' },
-    { slug: 'oulimata-cissokho', name: 'Oulimata Cissokho' },
+    { slug: 'oulimata-cissokho', name: 'Oulimata Ba' },
     { slug: 'yara-coulibaly', name: 'Yara Gorgui Coulibaly Kadam' },
     { slug: 'rabyatou-diallo', name: 'Rabyatou Diallo' },
     { slug: 'mariama-tine', name: 'Mariama Tine' },
