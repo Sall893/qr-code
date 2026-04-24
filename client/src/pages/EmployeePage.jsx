@@ -165,7 +165,7 @@ const EmployeePage = () => {
                 localData = {
                     full_name: 'IBRAHIMA SENE',
                     position: 'Superviseur Planificateur des Travaux',
-                    phone: '+221 76 370 75 67',
+                    phone: '+221 76 622 24 16',
                     email: 'ibrahima.sene@power-techservices.com',
                     photo_url: '/images/ibrahima.PNG',
                     linkedin_personal: 'https://www.linkedin.com/in/ibrahima-sene-630737232'
@@ -285,6 +285,7 @@ const EmployeePage = () => {
                     }
                     if (slug === 'ibrahima-sene') {
                         empData.photo_url = '/images/ibrahima.PNG';
+                        empData.phone = '+221 76 622 24 16';
                         empData.linkedin_personal = 'https://www.linkedin.com/in/ibrahima-sene-630737232';
                     }
                     if (slug === 'kine-gueye-sambe') {
