@@ -225,6 +225,15 @@ const EmployeePage = () => {
                     photo_url: '/images/dethie.jpeg',
                     linkedin_personal: 'https://www.linkedin.com/in/papa-dethie-thiam-267395211/'
                 };
+            } else if (slug === 'amsata-gueye') {
+                localData = {
+                    full_name: 'AMSATA GUEYE',
+                    position: 'CEO PowerTech Engineering Group',
+                    phone: '+221 77 522 98 56 / +225 0769333369',
+                    email: 'amsata.gueye@power-techservices.com',
+                    photo_url: '/images/gueye.png',
+                    linkedin_personal: 'https://www.linkedin.com/in/amsata-gu%C3%A8ye-a436573a/'
+                };
             }
 
             if (localData) {
@@ -312,6 +321,13 @@ const EmployeePage = () => {
                     if (slug === 'papa-dethie-thiam') {
                         empData.photo_url = '/images/dethie.jpeg';
                         empData.linkedin_personal = 'https://www.linkedin.com/in/papa-dethie-thiam-267395211/';
+                    }
+                    if (slug === 'amsata-gueye') {
+                        empData.photo_url = '/images/gueye.png';
+                        empData.full_name = 'AMSATA GUEYE';
+                        empData.position = 'CEO PowerTech Engineering Group';
+                        empData.phone = '+221 77 522 98 56 / +225 0769333369';
+                        empData.linkedin_personal = 'https://www.linkedin.com/in/amsata-gu%C3%A8ye-a436573a/';
                     }
 
                     setEmployee(empData);

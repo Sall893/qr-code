@@ -8,7 +8,12 @@ import {
 
 const BusinessCard = ({ employee, company }) => {
     const [showShare, setShowShare] = useState(false);
+    const [showQr, setShowQr] = useState(false);
     const [mounted, setMounted] = useState(false);
+
+    // Derive QR image path from current URL slug
+    const slug = window.location.pathname.replace('/', '').trim();
+    const qrImagePath = `/images/qr_${slug.replace(/-/g, '_')}.png`;
 
     useEffect(() => {
         setMounted(true);
@@ -358,8 +363,7 @@ END:VCARD`;
                 <div className="w-full max-w-[400px] flex justify-between items-end gap-3 pointer-events-auto">
                     {/* Left: QR & Share (small ones) */}
                     <div className="flex gap-3 pb-0">
-                        <button className="w-12 h-12 bg-[#ea580c] rounded-full flex items-center justify-center text-white shadow-lg shadow-orange-900/20 hover:bg-orange-600 active:scale-95 transition-all">
-                            {/* Placeholder QR Link */}
+                        <button onClick={() => setShowQr(true)} className="w-12 h-12 bg-[#ea580c] rounded-full flex items-center justify-center text-white shadow-lg shadow-orange-900/20 hover:bg-orange-600 active:scale-95 transition-all">
                             <QrCode size={22} />
                         </button>
                         <button onClick={() => setShowShare(!showShare)} className="w-12 h-12 bg-[#ea580c] rounded-full flex items-center justify-center text-white shadow-lg shadow-orange-900/20 hover:bg-orange-600 active:scale-95 transition-all">
@@ -376,6 +380,21 @@ END:VCARD`;
                     </button>
                 </div>
             </div>
+
+            {/* QR Code Modal */}
+            {showQr && (
+                <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 backdrop-blur-sm p-6 animate-fade-in" onClick={() => setShowQr(false)}>
+                    <div className="bg-white rounded-3xl p-6 shadow-2xl max-w-[280px] w-full flex flex-col items-center animate-slide-up" onClick={e => e.stopPropagation()}>
+                        <h3 className="text-lg font-bold text-gray-800 mb-1 text-center">{employee.full_name}</h3>
+                        <p className="text-xs text-orange-600 uppercase tracking-widest mb-4 text-center">{employee.position}</p>
+                        <div className="bg-gray-50 rounded-2xl p-3 border border-gray-100">
+                            <img src={qrImagePath} alt="QR Code" className="w-48 h-48 object-contain" />
+                        </div>
+                        <p className="text-[10px] text-gray-400 mt-3 text-center">Scannez pour voir le profil</p>
+                        <button onClick={() => setShowQr(false)} className="mt-4 w-full py-3 bg-[#ea580c] text-white rounded-xl font-bold hover:bg-orange-600 transition-colors">Fermer</button>
+                    </div>
+                </div>
+            )}
 
             {/* Share Sheet Modal (Simple) */}
             {showShare && (

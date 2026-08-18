@@ -35,6 +35,8 @@ function App() {
                 <li><a href="/anta-gaye">/anta-gaye</a></li>
                 <li><a href="/mademba-thiam">/mademba-thiam</a></li>
                 <li><a href="/papa-dethie-thiam">/papa-dethie-thiam</a></li>
+                <li><a href="/amsata-gueye">/amsata-gueye</a></li>
+
                 <li><a href="/powertech-digital-cards">/powertech-digital-cards</a></li>
               </ul>
             </div>
