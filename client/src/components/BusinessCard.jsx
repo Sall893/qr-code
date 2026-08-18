@@ -9,6 +9,7 @@ import {
 const BusinessCard = ({ employee, company }) => {
     const [showShare, setShowShare] = useState(false);
     const [showQr, setShowQr] = useState(false);
+    const [phoneActionModal, setPhoneActionModal] = useState({ isOpen: false, type: null });
     const [mounted, setMounted] = useState(false);
 
     // Derive QR image path from current URL slug
@@ -26,12 +27,14 @@ const BusinessCard = ({ employee, company }) => {
     );
 
     const handleSaveContact = () => {
+        // vCard logic
+        const primaryPhone = employee.phone?.split(/[\/,]/)[0].trim() || '';
         const vCard = `BEGIN:VCARD
 VERSION:3.0
 FN:${employee.full_name}
 ORG:${company.name}
 TITLE:${employee.position}
-TEL;TYPE=CELL:${employee.phone}
+TEL;TYPE=CELL:${primaryPhone}
 EMAIL:${employee.email}
 URL:${company.website}
 ADR:;;${company.address.replace(/,/g, ';')};;;;
@@ -45,8 +48,33 @@ END:VCARD`;
         window.URL.revokeObjectURL(url);
     };
 
-    // Prepare Whatsapp Link
-    const whatsappLink = `https://wa.me/${employee.phone?.replace(/[^0-9]/g, '')}`;
+    // Parse phone numbers
+    const phoneNumbers = employee.phone ? employee.phone.split(/[\/,]/).map(n => n.trim()).filter(n => n) : [];
+
+    const handlePhoneAction = (type) => {
+        if (phoneNumbers.length === 1) {
+            executePhoneAction(type, phoneNumbers[0]);
+        } else if (phoneNumbers.length > 1) {
+            setPhoneActionModal({ isOpen: true, type });
+        }
+    };
+
+    const executePhoneAction = (type, phoneNumber) => {
+        const cleanNumber = phoneNumber.replace(/[^0-9+]/g, '');
+        const waNumber = phoneNumber.replace(/[^0-9]/g, '');
+
+        switch (type) {
+            case 'call':
+                window.location.href = `tel:${cleanNumber}`;
+                break;
+            case 'sms':
+                window.location.href = `sms:${cleanNumber}`;
+                break;
+            case 'whatsapp':
+                window.open(`https://wa.me/${waNumber}`, '_blank');
+                break;
+        }
+    };
 
     return (
         <div className="min-h-screen flex items-center justify-center p-4 font-sans perspective-1000 bg-gray-50/50">
@@ -117,9 +145,9 @@ END:VCARD`;
                     {/* --- NEW ICON ROW (Added per request) --- */}
                     <div className="flex justify-center gap-4 mb-8 animate-slide-up" style={{ animationDelay: '200ms' }}>
                         {/* Phone */}
-                        <a href={`tel:${employee.phone}`} className="flex items-center justify-center w-12 h-12 bg-[#ea580c] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-orange-500/50 transition-all duration-300">
+                        <button onClick={() => handlePhoneAction('call')} className="flex items-center justify-center w-12 h-12 bg-[#ea580c] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-orange-500/50 transition-all duration-300">
                             <Phone size={20} fill="currentColor" strokeWidth={1} />
-                        </a>
+                        </button>
 
                         {/* Email */}
                         <a href={`mailto:${employee.email}`} className="flex items-center justify-center w-12 h-12 bg-[#ea580c] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-orange-500/50 transition-all duration-300">
@@ -127,14 +155,14 @@ END:VCARD`;
                         </a>
 
                         {/* SMS */}
-                        <a href={`sms:${employee.phone}`} className="flex items-center justify-center w-12 h-12 bg-[#ea580c] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-orange-500/50 transition-all duration-300">
+                        <button onClick={() => handlePhoneAction('sms')} className="flex items-center justify-center w-12 h-12 bg-[#ea580c] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-orange-500/50 transition-all duration-300">
                             <MessageSquare size={20} fill="currentColor" strokeWidth={1} />
-                        </a>
+                        </button>
 
                         {/* WhatsApp */}
-                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-12 h-12 bg-[#ea580c] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-orange-500/50 transition-all duration-300">
+                        <button onClick={() => handlePhoneAction('whatsapp')} className="flex items-center justify-center w-12 h-12 bg-[#ea580c] text-white rounded-full shadow-lg hover:scale-110 hover:shadow-orange-500/50 transition-all duration-300">
                             <svg viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" /></svg>
-                        </a>
+                        </button>
                     </div>
 
 
@@ -155,9 +183,13 @@ END:VCARD`;
                             {/* Mobile SN */}
                             <div>
                                 <p className="text-[#ea580c] text-lg font-serif">Mobile SN</p>
-                                <a href={`tel:${employee.phone}`} className="text-gray-200 text-sm font-light mt-1 block hover:text-white transition-colors">
-                                    {employee.phone}
-                                </a>
+                                <div className="mt-1 space-y-1 block">
+                                    {phoneNumbers.map((num, i) => (
+                                        <a key={i} href={`tel:${num.replace(/[^0-9+]/g, '')}`} className="text-gray-200 text-sm font-light block hover:text-white transition-colors">
+                                            {num}
+                                        </a>
+                                    ))}
+                                </div>
                             </div>
 
                             {/* Email */}
@@ -423,6 +455,36 @@ END:VCARD`;
                             </button>
                         </div>
                         <button onClick={() => setShowShare(false)} className="mt-6 w-full py-3 bg-gray-100 rounded-xl font-bold text-gray-600">Fermer</button>
+                    </div>
+                </div>
+            )}
+
+            {/* Phone Number Selection Modal */}
+            {phoneActionModal.isOpen && (
+                <div className="fixed inset-0 z-[60] flex items-end sm:items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-fade-in" onClick={() => setPhoneActionModal({ isOpen: false, type: null })}>
+                    <div className="bg-white w-full max-w-sm rounded-3xl p-6 shadow-2xl animate-slide-up" onClick={e => e.stopPropagation()}>
+                        <h3 className="text-lg font-bold text-gray-800 mb-2 text-center">
+                            {phoneActionModal.type === 'call' && 'Appeler'}
+                            {phoneActionModal.type === 'sms' && 'Envoyer un SMS'}
+                            {phoneActionModal.type === 'whatsapp' && 'Message WhatsApp'}
+                        </h3>
+                        <p className="text-sm text-gray-500 mb-4 text-center">Choisissez un numéro :</p>
+                        <div className="space-y-3">
+                            {phoneNumbers.map((num, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => {
+                                        executePhoneAction(phoneActionModal.type, num);
+                                        setPhoneActionModal({ isOpen: false, type: null });
+                                    }}
+                                    className="w-full py-4 px-4 bg-gray-50 hover:bg-orange-50 border border-gray-100 hover:border-orange-200 rounded-2xl flex items-center justify-between transition-colors group"
+                                >
+                                    <span className="font-medium text-gray-700 group-hover:text-orange-700">{num}</span>
+                                    <ChevronRight size={16} className="text-gray-400 group-hover:text-orange-500" />
+                                </button>
+                            ))}
+                        </div>
+                        <button onClick={() => setPhoneActionModal({ isOpen: false, type: null })} className="mt-4 w-full py-3 bg-gray-100 rounded-xl font-bold text-gray-600">Annuler</button>
                     </div>
                 </div>
             )}
