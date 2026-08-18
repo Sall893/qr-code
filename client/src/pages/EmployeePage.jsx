@@ -228,7 +228,7 @@ const EmployeePage = () => {
             } else if (slug === 'amsata-gueye') {
                 localData = {
                     full_name: 'AMSATA GUEYE',
-                    position: 'CEO PowerTech Engineering Group',
+                    position: 'DG PowerTech Engineering Group',
                     phone: '+221 77 522 98 56 / +225 0769333369',
                     email: 'amsata.gueye@power-techservices.com',
                     photo_url: '/images/gueye.png',
@@ -325,7 +325,7 @@ const EmployeePage = () => {
                     if (slug === 'amsata-gueye') {
                         empData.photo_url = '/images/gueye.png';
                         empData.full_name = 'AMSATA GUEYE';
-                        empData.position = 'CEO PowerTech Engineering Group';
+                        empData.position = 'DG PowerTech Engineering Group';
                         empData.phone = '+221 77 522 98 56 / +225 0769333369';
                         empData.linkedin_personal = 'https://www.linkedin.com/in/amsata-gu%C3%A8ye-a436573a/';
                     }
